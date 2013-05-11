@@ -40,19 +40,7 @@
 
 - (void)memoryWarning
 {
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *publicKeyPath = [path stringByAppendingPathComponent:@"opensslpub.pem"];
-    NSString *cipherDataPath = [path stringByAppendingPathComponent:@"cipher.data"];
-    
-    NSString *publicKeyBase64String = [[NSString alloc] initWithContentsOfFile:publicKeyPath
-                                                                      encoding:NSUTF8StringEncoding
-                                                                         error:nil];
-    NSData *publicData = [OTHashHelper base64DataFromString:publicKeyBase64String];
-    
-    OTRSAPublicKey *rsaKey = [[OTRSAPublicKey alloc] initWithData:publicData tag:nil];
-    
-    NSData *encryptData = [rsaKey encryptUTF8String:@"123"];
-    [encryptData writeToFile:cipherDataPath atomically:YES];
+#warning write your test case here
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
