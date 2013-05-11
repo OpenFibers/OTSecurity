@@ -16,6 +16,10 @@
 		42268530173E65EC00458D93 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4226852F173E65EC00458D93 /* Default.png */; };
 		42268532173E65EC00458D93 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42268531173E65EC00458D93 /* Default@2x.png */; };
 		42268534173E65EC00458D93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42268533173E65EC00458D93 /* Default-568h@2x.png */; };
+		42268541173E660E00458D93 /* OTHashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4226853C173E660E00458D93 /* OTHashHelper.m */; };
+		42268542173E660E00458D93 /* OTRSAKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4226853E173E660E00458D93 /* OTRSAKey.m */; };
+		42268543173E660E00458D93 /* UnitTestOTRSAKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 42268540173E660E00458D93 /* UnitTestOTRSAKey.m */; };
+		42268545173E667E00458D93 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42268544173E667E00458D93 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,13 @@
 		4226852F173E65EC00458D93 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		42268531173E65EC00458D93 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		42268533173E65EC00458D93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4226853B173E660E00458D93 /* OTHashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTHashHelper.h; sourceTree = "<group>"; };
+		4226853C173E660E00458D93 /* OTHashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTHashHelper.m; sourceTree = "<group>"; };
+		4226853D173E660E00458D93 /* OTRSAKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRSAKey.h; sourceTree = "<group>"; };
+		4226853E173E660E00458D93 /* OTRSAKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRSAKey.m; sourceTree = "<group>"; };
+		4226853F173E660E00458D93 /* UnitTestOTRSAKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTestOTRSAKey.h; sourceTree = "<group>"; };
+		42268540173E660E00458D93 /* UnitTestOTRSAKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTestOTRSAKey.m; sourceTree = "<group>"; };
+		42268544173E667E00458D93 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42268545173E667E00458D93 /* Security.framework in Frameworks */,
 				4226851E173E65EC00458D93 /* UIKit.framework in Frameworks */,
 				42268520173E65EC00458D93 /* Foundation.framework in Frameworks */,
 				42268522173E65EC00458D93 /* CoreGraphics.framework in Frameworks */,
@@ -51,7 +63,9 @@
 		42268511173E65EC00458D93 = {
 			isa = PBXGroup;
 			children = (
+				42268544173E667E00458D93 /* Security.framework */,
 				42268523173E65EC00458D93 /* OTSecurityDemo */,
+				4226853A173E660E00458D93 /* OTSecurity */,
 				4226851C173E65EC00458D93 /* Frameworks */,
 				4226851B173E65EC00458D93 /* Products */,
 			);
@@ -97,6 +111,19 @@
 				42268533173E65EC00458D93 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4226853A173E660E00458D93 /* OTSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				4226853B173E660E00458D93 /* OTHashHelper.h */,
+				4226853C173E660E00458D93 /* OTHashHelper.m */,
+				4226853D173E660E00458D93 /* OTRSAKey.h */,
+				4226853E173E660E00458D93 /* OTRSAKey.m */,
+				4226853F173E660E00458D93 /* UnitTestOTRSAKey.h */,
+				42268540173E660E00458D93 /* UnitTestOTRSAKey.m */,
+			);
+			path = OTSecurity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +194,9 @@
 			files = (
 				4226852A173E65EC00458D93 /* main.m in Sources */,
 				4226852E173E65EC00458D93 /* OTAppDelegate.m in Sources */,
+				42268541173E660E00458D93 /* OTHashHelper.m in Sources */,
+				42268542173E660E00458D93 /* OTRSAKey.m in Sources */,
+				42268543173E660E00458D93 /* UnitTestOTRSAKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

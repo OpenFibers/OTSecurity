@@ -7,6 +7,7 @@
 //
 
 #import "OTAppDelegate.h"
+#import "UnitTestOTRSAKey.h"
 
 @implementation OTAppDelegate
 
@@ -16,6 +17,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    for (int i = 0; i < 1; i++)
+    {
+        [UnitTestOTRSAKey testRSA];
+        [UnitTestOTRSAKey testSHA1];
+        [UnitTestOTRSAKey testSign];
+    }
+    
     return YES;
 }
 
