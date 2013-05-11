@@ -31,4 +31,7 @@
 //Get base64 encoded string with `data`, will insert '\n' at each `lineLength`
 + (NSString *)base64EncodingWithData:(NSData *)data lineLength:(unsigned int)lineLength;
 
+//Get data from a base64 encoded string.
++ (NSData *)base64DataFromString:(NSString *)string;
+
 @end
