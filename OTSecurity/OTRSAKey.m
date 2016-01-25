@@ -260,7 +260,7 @@
 	
 	if(!(sanityCheck == noErr || sanityCheck == errSecDuplicateItem))
     {
-        NSAssert(0, @"Problem adding the peer public key to the keychain, OSStatus == %ld.", sanityCheck );
+        NSAssert(0, @"Problem adding the peer public key to the keychain, OSStatus == %d.", (int)sanityCheck );
         return NO;
     }
     
@@ -294,7 +294,7 @@
 	
     if (!(sanityCheck == noErr || sanityCheck == errSecItemNotFound))
     {
-        NSAssert(0, @"Problem deleting the peer public key to the keychain, OSStatus == %ld.", sanityCheck );
+        NSAssert(0, @"Problem deleting the peer public key to the keychain, OSStatus == %d.", (int)sanityCheck );
         return NO;
     }
     
@@ -416,7 +416,7 @@
 	sanityCheck = SecItemAdd((__bridge CFDictionaryRef) peerPublicKeyAttr, (CFTypeRef *)&persistPeer);
 	
 	NSAssert( sanityCheck == noErr || sanityCheck == errSecDuplicateItem,
-             @"Problem adding the peer public key to the keychain, OSStatus == %ld.", sanityCheck );
+             @"Problem adding the peer public key to the keychain, OSStatus == %d.", (int)sanityCheck );
 	
 	if (persistPeer)
     {
@@ -430,7 +430,7 @@
 		sanityCheck = SecItemCopyMatching((__bridge CFDictionaryRef) peerPublicKeyAttr, (CFTypeRef *)&peerKeyRef);
 	}
 	
-	NSAssert( sanityCheck == noErr, @"Problem acquiring reference to the public key, OSStatus == %ld.", sanityCheck );
+	NSAssert( sanityCheck == noErr, @"Problem acquiring reference to the public key, OSStatus == %d.", (int)sanityCheck );
 	
     if (!peerName.length)
     {
@@ -496,7 +496,7 @@
             
             if (status != noErr)
             {
-                NSLog(@"Cannot encrypt data, last SecKeyEncrypt status: %ld", status);
+                NSLog(@"Cannot encrypt data, last SecKeyEncrypt status: %d", (int)status);
                 return nil;
             }
             [accumulator appendBytes:cipherBuffer length:actualOutputSize];
@@ -608,7 +608,7 @@
             
             if (status != noErr)
             {
-                NSLog(@"Cannot encrypt data, last SecKeyEncrypt status: %ld", status);
+                NSLog(@"Cannot encrypt data, last SecKeyEncrypt status: %d", (int)status);
                 return nil;
             }
             
@@ -678,7 +678,7 @@
 	
     if ( sanityCheck != noErr)
     {
-        NSAssert( sanityCheck == noErr, @"Problem signing the SHA1 hash, OSStatus == %ld.", sanityCheck );
+        NSAssert( sanityCheck == noErr, @"Problem signing the SHA1 hash, OSStatus == %d.", (int)sanityCheck );
     }
 	
 	// Build up signed SHA1 blob.

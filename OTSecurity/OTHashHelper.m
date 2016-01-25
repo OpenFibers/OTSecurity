@@ -73,7 +73,7 @@
 	// Initialize the context.
 	CC_SHA1_Init(&ctx);
 	// Perform the hash.
-	CC_SHA1_Update(&ctx, (void *)[plainBytes bytes], [plainBytes length]);
+	CC_SHA1_Update(&ctx, (void *)[plainBytes bytes], (CC_LONG)[plainBytes length]);
 	// Finalize the output.
 	CC_SHA1_Final(hashBytes, &ctx);
 	
