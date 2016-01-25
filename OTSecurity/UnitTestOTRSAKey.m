@@ -59,7 +59,7 @@
     BOOL test3Result = [decryptedString3 isEqualToString:plainTextLong];
     NSLog(@"test 3 : %d (public key data representation and init with data)", test3Result);
     
-    //5.Permanent Store
+    //4.Permanent Store
     
     NSArray *publicKeyArray = @[publicKey];
     NSData *publicKeyArrayData = [NSKeyedArchiver archivedDataWithRootObject:publicKeyArray];
@@ -78,16 +78,16 @@
         test5Result = [decryptedString5 isEqualToString:plainTextLong];
     }
 
-    NSLog(@"test 5 : %d (permanent store to file and read key from file)", test5Result);
+    NSLog(@"test 4 : %d (permanent store to file and read key from file)", test5Result);
     
-    //6.Store to keychain and stored key in keychain with tag
+    //5.Store to keychain and stored key in keychain with tag
     BOOL importSuccessed = [publicKeyExported storeToKeychainWithTagString:@"c"];
     OTRSAPublicKey *publicKeyExportedFromKeychain = [OTRSAKey storedPublicRSAKeyInKeychainWithTag:@"c"];
     NSData *encryptedData6 = [publicKeyExportedFromKeychain encryptUTF8String:plainTextLong];
     NSString *decryptedString6 = [privateKey plainUTF8StringFromCipherData:encryptedData6];
     
     BOOL test6Result = importSuccessed && [decryptedString6 isEqualToString:plainTextLong];
-    NSLog(@"test 6 : %d (Store to keychain with tag and stored key in keychain with tag)", test6Result);
+    NSLog(@"test 5 : %d (Store to keychain with tag and stored key in keychain with tag)", test6Result);
     
     //7.Stored key data in keychain
     NSData *dataFromTagA = [OTRSAKey storedKeyDataInKeychainWithTag:@"a"];
