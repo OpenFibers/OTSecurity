@@ -14,6 +14,7 @@
 {
     unsigned char *buffer = (unsigned char *)malloc(sizeof(unsigned char) * hashData.length);
 	[hashData getBytes:buffer];
+    [hashData getBytes:buffer length:hashData.length];
 	NSMutableString *hashString = [NSMutableString string];
 	for (int i =0 ; i < hashData.length; i++)
     {
